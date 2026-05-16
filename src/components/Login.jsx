@@ -18,58 +18,38 @@ function Login() {
     setError("");
 
     try {
-
-        console.log("STEP 1");
-
-        const session = await authService.login(data);
-
-        console.log("SESSION:", session);
-
-        console.log("STEP 2");
-
+        await authService.login(data);
         const userData = await authService.getCurrentUser();
 
-        console.log("USER:", userData);
-
-        console.log("STEP 3");
-
         if (userData) {
-
             dispatch(authLogin(userData));
-
-            console.log("STEP 4");
-
             navigate("/");
         }
 
     } catch (error) {
-
-        console.log("FULL ERROR:", error);
-
         setError(error.message);
     }
 }
   return (
-     <div
-    className='flex items-center justify-center w-full'
-    >
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-        <div className="mb-2 flex justify-center">
-                    <span className="inline-block w-full max-w-25">
-                        <Logo width="100%" />
+     <div className='flex w-full items-center justify-center px-4 py-12 sm:py-16'>
+        <div className='mx-auto w-full max-w-lg overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-slate-900/85 p-8 shadow-2xl shadow-cyan-500/10 backdrop-blur sm:p-10'>
+        <div className="mb-6 flex justify-center">
+                    <span className="inline-flex rounded-full border border-cyan-300/20 bg-slate-950 px-5 py-3 text-2xl">
+                        <Logo width="112px" />
                     </span>
         </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">Sign in to your account</h2>
-        <p className="mt-2 text-center text-base text-black/60">
-                    Don&apos;t have any account?&nbsp;
+        <p className='text-center text-sm font-black uppercase tracking-[0.25em] text-cyan-300'>Welcome back</p>
+        <h2 className="mt-3 text-center text-3xl font-black leading-tight text-white">Sign in to your account</h2>
+        <p className="mt-3 text-center text-base text-slate-400">
+                    Don&apos;t have an account?&nbsp;
                     <Link
                         to="/signup"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
+                        className="font-bold text-cyan-300 transition-all duration-200 hover:text-cyan-100 hover:underline"
                     >
                         Sign Up
                     </Link>
         </p>
-      {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+      {error && <p className="mt-8 rounded-2xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-center text-sm font-semibold text-rose-200">{error}</p>}
       
       <form onSubmit={handleSubmit(login)} className="mt-8">
         <div className='space-y-5'>
