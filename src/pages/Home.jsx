@@ -23,13 +23,17 @@ function Home() {
       <div className="w-full py-16 sm:py-24">
         <Container>
           <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-slate-900/70 p-8 text-center shadow-2xl shadow-cyan-500/10 sm:p-14">
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Dark elegant blog</p>
-            <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl">
-              Write. Read. Glow.
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              Sign in to explore posts, publish ideas, and manage your stories in a bold midnight interface.
-            </p>
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">
+    Your blogging space
+</p>
+
+<h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl">
+    Discover stories worth reading.
+</h1>
+
+<p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+    Sign in to explore thoughtful articles, publish your own posts, and keep track of your writing.
+</p>
             <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
               <Link to="/login" className="rounded-full bg-cyan-300 px-7 py-3 font-black text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:-translate-y-0.5 hover:bg-cyan-200">
                 Login to read posts
